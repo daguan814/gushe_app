@@ -1,0 +1,81 @@
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  cache:
+    redis:
+      time-to-live: 1800000
+
+  redis:
+    host: 121.40.85.197
+    port: 6379
+    password: redis_cli
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 2000ms
+        max-idle: 4
+        min-idle: 0
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://121.40.85.197:3306/gushe
+    username: root
+    password: Lhf@2001.
+
+server:
+  port: 8080
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+
+
+
+
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: pro  #??
+#
+#
+#
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://??:33060/shuijing #?servierTimezone=UTC
+#    username: root
+#    password: ??
+#server:
+#  port: 8080
+#
+#
+#
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: true #??MP??????????
+#  global-config:
+#    db-config:
+#      id-type: assign_id
+#
+#shuijing:
+#  path: ~/docker-files/DishImg
+#
+#
+#---
