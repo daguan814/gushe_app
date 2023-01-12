@@ -9,6 +9,8 @@ spring:
     activate:
       on-profile: dev
 
+
+
   cache:
     redis:
       time-to-live: 1800000
@@ -29,8 +31,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://121.40.85.197:3306/gushe
-    username: root
-    password: Lhf@2001.
+    username: gushe_shuijing
+    password: gusheliying_1
+
 
 server:
   port: 8080
@@ -43,6 +46,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: assign_id
+
+
 
 
 

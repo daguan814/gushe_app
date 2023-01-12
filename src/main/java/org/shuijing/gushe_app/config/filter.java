@@ -44,8 +44,8 @@ public class filter implements Filter {
 
 
         String[] urls = new String[]{ //不需要处理的请求
-                "/codeUser/login",
-
+                "/UserMain/regi",
+                "/UserMain/login",
         };
 
         //判断本次请求是否需要处理
