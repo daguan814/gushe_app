@@ -34,6 +34,7 @@ import static org.shuijing.gushe_app.common.JwtUtils.checkToken;
 public class filter implements Filter {
 
     public static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();//路径匹配器
+
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
@@ -44,30 +45,32 @@ public class filter implements Filter {
 
 
         String[] urls = new String[]{ //不需要处理的请求
-                "/UserMain/regi",
-                "/UserMain/login",
+                "/eAdmin/login",
+                "/uCommonuser/regi"
+                , "/uCommonuser/userinfoManage"
+                ,"/common/upload",
+                "/common/download"
         };
 
         //判断本次请求是否需要处理
-        boolean check = check(urls,requestURI);
-        if (check){     //不需要处理，直接放行
+        boolean check = check(urls, requestURI);
+        if (check) {     //不需要处理，直接放行
             System.out.println("本次不需要处理，放行");
-            filterChain.doFilter(request,response);    //放行
+            filterChain.doFilter(request, response);    //放行
             return;
         }
 
 
-
         //判断用户token是否合法
-        String  token = request.getHeader("token");
-        if(token == null || token.equals(" ")){
+        String token = request.getHeader("token");
+        if (token == null || token.equals(" ")) {
             //token为空，不能放行
-            response.getWriter().write(JSON.toJSONString(Result.error(300,"token is null, Must Login")));
-        }else if(!checkToken(token)) {  //token不正确，日期？攻击
-            response.getWriter().write(JSON.toJSONString(Result.error(300,"token can not use")));
-        }else {
+            response.getWriter().write(JSON.toJSONString(Result.error(300, "token is null, Must Login")));
+        } else if (!checkToken(token)) {  //token不正确，日期？攻击
+            response.getWriter().write(JSON.toJSONString(Result.error(300, "token can not use")));
+        } else {
 //            token不为空，且日期正确，放行
-            filterChain.doFilter(request,response);    //放行
+            filterChain.doFilter(request, response);    //放行
         }
 
 
@@ -75,15 +78,16 @@ public class filter implements Filter {
 
     /**
      * 路径匹配
+     *
      * @param urls
      * @param requestURI
      * @return
      */
 
-    public boolean check(String[] urls,String requestURI){
+    public boolean check(String[] urls, String requestURI) {
 
         for (String url : urls) {
-            boolean match = PATH_MATCHER.match(url,requestURI);  //比较两个路径
+            boolean match = PATH_MATCHER.match(url, requestURI);  //比较两个路径
             if (match) {
                 return true;
             }

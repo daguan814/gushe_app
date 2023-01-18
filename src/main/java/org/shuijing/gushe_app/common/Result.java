@@ -23,7 +23,7 @@ public class Result<T> {
     private String msg = "";
     private T data ;
 
-    private Map map = new HashMap(); //动态数据
+    private  Map map = new HashMap(); //动态数据
 
     public static <T> Result<T> success(T object){
         Result<T> result = new Result<T>();
@@ -39,7 +39,7 @@ public class Result<T> {
         return result;
     }
 
-    public    Result<T> add(String key, Object value) {
+    public  Result<T> add(String key, Object value) {
         this.code = 200;
         this.map.put(key,value);
         return this;

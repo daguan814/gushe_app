@@ -48,7 +48,9 @@ mybatis-plus:
       id-type: assign_id
 
 
-
+#图片的路径
+shuijing:
+  path: /imgs/
 
 
 
@@ -79,8 +81,7 @@ mybatis-plus:
 #    db-config:
 #      id-type: assign_id
 #
-#shuijing:
-#  path: ~/docker-files/DishImg
+
 #
 #
 #---
