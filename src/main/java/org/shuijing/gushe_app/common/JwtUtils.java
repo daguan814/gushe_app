@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * token验证
+ * token工具
  */
 public class JwtUtils {
 
@@ -28,7 +28,7 @@ public class JwtUtils {
     private static String SECRET = "tangshuijing";
 
 
-    public static String createToken(String username, String role) {
+    public static String createToken() {
 
 
         Date expireDate = new Date(System.currentTimeMillis() + timeRole);

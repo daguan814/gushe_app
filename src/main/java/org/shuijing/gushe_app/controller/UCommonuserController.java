@@ -1,5 +1,7 @@
 package org.shuijing.gushe_app.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.shuijing.gushe_app.common.JwtUtils;
 import org.shuijing.gushe_app.common.Result;
 import org.shuijing.gushe_app.pojo.RCostrecord;
 import org.shuijing.gushe_app.pojo.UCommonuser;
@@ -8,14 +10,9 @@ import org.shuijing.gushe_app.service.UCommonuserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -35,25 +32,30 @@ public class UCommonuserController {
     @Autowired
     private RCostrecordService rCostrecordService;
 
-
+    /**
+     * 用户注册
+     *
+     * @param uCommonuser
+     * @return
+     */
     @PostMapping("/regi")
     @Transactional   //加个事务
-    public Result register(@RequestBody UCommonuser uCommonuser){
-            //前端传过来email和password,将password加密
+    public Result register(@RequestBody UCommonuser uCommonuser) {
+        //前端传过来email和password,将password加密
         String password = uCommonuser.getPwd();
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         uCommonuser.setPwd(password);
 
         //将传过来的email、password、再加上其余数据，传入数据库
         uCommonuser.setRegiDate(LocalDate.now()); //注册日期
-        uCommonuser.setStatus(1); //设定状态为可用
+        uCommonuser.setStatus(3); //设定状态为需要完善信息
         uCommonuser.setVipGoal(0);  //设定积分
         uCommonuser.setVipGrade("白银会员");  //设定会员等级
         uCommonuser.setMoney(10.0);    //设定初始金额
         try {
             uCommonuserService.save(uCommonuser);//传入数据库，新增一个用户
-        }catch (Exception e){    //判断用户存在与否
-            return Result.error(100,"该用户已存在");
+        } catch (Exception e) {    //判断用户存在与否
+            return Result.error(100, "该用户已存在");
         }
 
 
@@ -65,16 +67,69 @@ public class UCommonuserController {
         rCostrecord.setOrderId("无");
         rCostrecord.setComment("注册赠送金");
         rCostrecordService.save(rCostrecord);
-        return  Result.success("成功新增用户");
+        return Result.success("成功新增用户");
     }
 
-    @PostMapping("/userinfoManage")
-    public Result userinfoComplete(@RequestBody UCommonuser uCommonuser){
+    /**
+     * 用户修改个人信息和注册时完善个人信息
+     *
+     * @param uCommonuser
+     * @return
+     */
+    @PutMapping("/userinfoManage")
+    public Result userinfoComplete(@RequestBody UCommonuser uCommonuser) {
 
         //将前端传过来的用户个人信息都写入表中
+        uCommonuser.setStatus(1);  //将用户状态更新
         uCommonuserService.updateById(uCommonuser);
 
-        return  Result.success("个人信息完善成功！");
+        return Result.success("个人信息修改成功！");
+    }
+
+    /**
+     * 用户登陆
+     * 前端传：用户名，密码
+     * 后端放回：000 封禁 100密码错误或没有注册 200成功登陆，返回信息 300没有补全信息，去补全
+     *
+     * @param uCommonuser
+     * @return
+     */
+
+    @PostMapping("/login")
+    public Result userLogin(@RequestBody UCommonuser uCommonuser) {
+        System.out.println("接收到登陆消息:"+uCommonuser.toString());
+        //?1.密码加密
+        String password = uCommonuser.getPwd();
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        //?2。密码比对
+        LambdaQueryWrapper<UCommonuser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UCommonuser::getEmail, uCommonuser.getEmail());
+        UCommonuser user = uCommonuserService.getOne(queryWrapper);
+
+        //如果没有查询到，返回登陆失败
+        if (user == null || !user.getPwd().equals(password)) {
+            System.out.println("没有该用户或用户密码错误");
+            return Result.error(100, "没有该用户或用户密码错误");
+        }
+
+        //该用户没有补全信息，
+        if (user.getStatus() == 3) {
+            System.out.println("该用户没有补全信息");
+            return Result.error(300, "该用户没有补全信息");
+        }
+        //该用户已被封禁
+        if (user.getStatus() == 0) {
+            System.out.println("该用户被封禁");
+            return Result.error(0, "该用户被封禁");
+        }
+
+        //?3。返回用户所有信息给前端。(密码正确)，但是要去掉密码
+        user.setPwd("000");
+        // ?4。返回token和信息
+        String Token = JwtUtils.createToken();    //新建token
+        return Result.success(user).add("token", Token);
+
+
     }
 
 }
