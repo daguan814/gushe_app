@@ -49,6 +49,7 @@ public class filter implements Filter {
                 "/uCommonuser/regi" //? 普通用户注册
                 , "/uCommonuser/userinfoManage", //? 普通用户完善信息
                 "/uCommonuser/login" //? 普通用户登陆
+                ,"/uCommonuser/forgetPwd" //?普通用户忘记密码
                 , "/common/upload",
                 "/common/download"
         };

@@ -18,7 +18,7 @@ spring:
   redis:
     host: 121.40.85.197
     port: 6379
-    password: redis_cli
+    password: redis_ali
     database: 0
     jedis:
       pool:
@@ -34,6 +34,14 @@ spring:
     username: gushe_shuijing
     password: gusheliying_1
 
+    #邮件
+  mail:
+    host: smtp.163.com
+    default-encoding: utf-8
+    username: lu873737753@163.com
+    password: FAAYLKWRAYWUYVUG    #授权码
+
+
 
 server:
   port: 8080
@@ -46,6 +54,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: assign_id
+
+
+
 
 
 #图片的路径

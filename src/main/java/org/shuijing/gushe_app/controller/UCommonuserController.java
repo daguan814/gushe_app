@@ -3,9 +3,11 @@ package org.shuijing.gushe_app.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.shuijing.gushe_app.common.JwtUtils;
 import org.shuijing.gushe_app.common.Result;
+import org.shuijing.gushe_app.pojo.MailRequest;
 import org.shuijing.gushe_app.pojo.RCostrecord;
 import org.shuijing.gushe_app.pojo.UCommonuser;
 import org.shuijing.gushe_app.service.RCostrecordService;
+import org.shuijing.gushe_app.service.SendMailService;
 import org.shuijing.gushe_app.service.UCommonuserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +15,7 @@ import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * <p>
@@ -29,8 +32,11 @@ public class UCommonuserController {
     @Autowired
     private UCommonuserService uCommonuserService;
 
-    @Autowired
+    @Autowired     //消费记录
     private RCostrecordService rCostrecordService;
+
+    @Autowired     //邮件发送
+    private SendMailService sendMailService;
 
     /**
      * 用户注册
@@ -128,8 +134,44 @@ public class UCommonuserController {
         // ?4。返回token和信息
         String Token = JwtUtils.createToken();    //新建token
         return Result.success(user).add("token", Token);
+    }
+
+    /**
+     * 忘记密码的操作 前端传送 ： email
+     * @param uCommonuser 的email
+     * @return
+     */
+    @PutMapping("/forgetPwd")
+    public Result forgetPwd(@RequestBody UCommonuser uCommonuser){
+
+        //?通过email来查询该用户
+        System.out.println(uCommonuser.getEmail());
+        LambdaQueryWrapper<UCommonuser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UCommonuser::getEmail, uCommonuser.getEmail());
+        UCommonuser user = uCommonuserService.getOne(queryWrapper);
+
+        if (user==null || user.getStatus()!=1){   //?用户不存在，返回错误 100
+            return Result.error(100,"该用户不存在,或者状态不对，无法更改密码");
+        }
+        //?用户存在，将密码更改为UUID，并且发送email给该用户的email
+        String newPwd = String.valueOf(UUID.randomUUID());//!生成临时密码
+        //密码加密，然后更新到数据库中
+        String password = DigestUtils.md5DigestAsHex(newPwd.getBytes());
+        user.setPwd(password);
+        uCommonuserService.updateById(user);
+
+        //!将新密码发送给用户的email
+        MailRequest mailRequest = new MailRequest(); //邮件初始化
+        mailRequest.setText(newPwd);    //内容
+        mailRequest.setSendTo(uCommonuser.getEmail());   //发送给某人
+        mailRequest.setSubject("hello，"+user.getNickName()+"。这是您的新密码");
+        sendMailService.sendSimpleMail(mailRequest);     //发送邮件
+        return Result.success("成功");
+
 
 
     }
+
+
 
 }

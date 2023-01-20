@@ -33,6 +33,14 @@
 
         </dependency>
 
+        <!-- springboot 邮件mail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+
+        </dependency>
+
+
 
         <dependency>
             <groupId>mysql</groupId>
@@ -80,6 +88,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
+        <!-- //slf4j包 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
 
 
         <!--        springboot最强最方便的接口生成文档神器-->
