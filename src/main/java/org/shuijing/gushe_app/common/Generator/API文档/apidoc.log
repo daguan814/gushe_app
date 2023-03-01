@@ -1,0 +1,140 @@
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find java src paths:  [/Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/]
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: project type not set, try to figure out...
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start find controllers in path : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : BRentorserviceorderController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : FAddserviceController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : BBuyorderController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : EEmployeeController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : RCollectionController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : REmpworkdaysController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : UCommonuserController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : CommonController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : AImageController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : FFirstloginController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : CMasteridentityController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : CHanbokcategoryController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : EAdminController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : RCostrecordController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : EMasterController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : HHanbokController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : BRentorserviceorderController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : FAddserviceController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : BBuyorderController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : EEmployeeController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : RCollectionController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : REmpworkdaysController.java
+1月 20, 2023 7:44:17 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : UCommonuserController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think T should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : T, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think T should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : T, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think T should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : T, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think T should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : T, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : UCommonuserController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : CommonController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : CommonController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : AImageController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : FFirstloginController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : CMasteridentityController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : CHanbokcategoryController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : EAdminController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think T should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : T, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Map should not be an enum type
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/common/Result.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : EAdminController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : RCostrecordController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : EMasterController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : HHanbokController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs start...
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/UCommonuserController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/UCommonuserController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/CommonController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/CommonController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/EAdminController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : /Users/shuijing/Documents/Code/Spring/gushe_app/src/main/java/org/shuijing/gushe_app/controller/EAdminController.java
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index start !!!
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index done !!!
+1月 20, 2023 7:44:18 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs done !!!

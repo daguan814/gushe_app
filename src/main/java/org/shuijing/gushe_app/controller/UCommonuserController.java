@@ -145,7 +145,7 @@ public class UCommonuserController {
     public Result forgetPwd(@RequestBody UCommonuser uCommonuser){
 
         //?通过email来查询该用户
-        System.out.println(uCommonuser.getEmail());
+        System.out.println("忘记密码:"+uCommonuser.getEmail());
         LambdaQueryWrapper<UCommonuser> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(UCommonuser::getEmail, uCommonuser.getEmail());
         UCommonuser user = uCommonuserService.getOne(queryWrapper);
